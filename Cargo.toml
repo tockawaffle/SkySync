@@ -1,0 +1,17 @@
+[package]
+name = "skysync"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.38"
+reqwest = { version = "0.12.5", features = ["json"] }
+tokio = { version = "1.39.2", features = ["full"] }
+serenity = "0.12.2"
+dotenv = "0.15.0"
+serde = "1.0.208"
+serde_json = "1.0.125"
+rand = "0.8.5"
+dirs = "5.0.1"
