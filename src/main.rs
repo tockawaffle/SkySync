@@ -15,7 +15,7 @@ use tokio::time::{interval, Duration};
 /// A `String` containing the public IP address.
 async fn get_public_ip() -> String {
     let client = reqwest::Client::new();
-    let response = client.get("https://icanhazip.com")
+    let response = client.get("https://ipv4.icanhazip.com")
         .send()
         .await
         .expect("Failed to send request");
