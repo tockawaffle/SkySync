@@ -56,8 +56,9 @@ async fn main() {
     // Get a handle to the Tokio runtime
     let handle = Handle::current();
 
-    // Define the duration for the interval (e.g., 5 minutes)
-    let interval_duration = Duration::from_secs(300); // 5 minutes
+    // Get the duration from the .env
+    let env_duration = std::env::var("CRON_INTERVAL").expect("Expected a cron interval in the environment");
+    let interval_duration = Duration::from_secs(env_duration.parse::<u64>().expect("Failed to parse cron interval"));
     let mut last_public_ip: Option<String> = None;
 
     // Spawn a new task that sets up a repeating timer and runs cron_init
